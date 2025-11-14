@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agroshop - Tienda de productos agrícolas frescos y de calidad">
+    <title>Agroshop - Productos Agrícolas Frescos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="top-bar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <h1>Agroshop</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio" onclick="goToSection('inicio')">Inicio</a></li>
+                    <li><a href="#tienda" onclick="goToSection('tienda')">Tienda</a></li>
+                    <li><a href="#nosotros" onclick="goToSection('nosotros')">Nosotros</a></li>
+                    <li><a href="#contacto" onclick="goToSection('contacto')">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="cart" role="button" aria-label="Carrito de compras">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-counter">0</span>
+                </div>
+                <a href="auth/login.html" class="login-icon" aria-label="Iniciar sesión">
+                    <i class="fas fa-user"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN INICIO (PRINCIPAL) -->
+    <section id="inicio" class="section active">
+        <div class="hero">
+            <div class="hero-content">
+                <h2>Bienvenido a Agroshop</h2>
+                <p>Los mejores productos agrícolas frescos directamente desde el campo a tu mesa</p>
+                <button class="btn-primary" onclick="goToSection('tienda')">Ir a la Tienda</button>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-leaf"></i>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-leaf"></i>
+                <h3>100% Fresco</h3>
+                <p>Productos recién cosechados, sin químicos</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-truck"></i>
+                <h3>Envío Rápido</h3>
+                <p>Entrega en 24 horas a tu domicilio</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Calidad Garantizada</h3>
+                <p>Seleccionamos los mejores productos</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-credit-card"></i>
+                <h3>Pago Seguro</h3>
+                <p>Múltiples métodos de pago disponibles</p>
+            </div>
+        </div>
+
+        <div class="products-preview">
+            <h2>Productos Destacados</h2>
+            <div class="products-grid-small" id="featured-products">
+                <!-- Se llenarán con JavaScript -->
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="btn-primary" onclick="goToSection('tienda')">Ver Todos los Productos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN TIENDA -->
+    <section id="tienda" class="section">
+        <div class="container-tienda">
+            <aside class="category-sidebar">
+                <h2>Categorías</h2>
+                <ul>
+                    <li><a href="#" data-category="all" class="active">Todas</a></li>
+                    <li><a href="#" data-category="frutas">Frutas</a></li>
+                    <li><a href="#" data-category="verduras">Verduras</a></li>
+                    <li><a href="#" data-category="lacteos">Lácteos</a></li>
+                    <li><a href="#" data-category="cereales">Cereales</a></li>
+                </ul>
+            </aside>
+
+            <div id="productos">
+                <h2>Nuestros Productos</h2>
+                <div class="product-grid" id="product-container">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN NOSOTROS -->
+    <section id="nosotros" class="section">
+        <div class="container-content">
+            <h2>Sobre Nosotros</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>¿Quiénes Somos?</h3>
+                    <p>Agroshop es una empresa dedicada a traer los mejores productos agrícolas frescos directamente desde los campos locales a tu hogar.</p>
+                    <p>Nos comprometemos con la calidad, sustentabilidad y el apoyo a los pequeños agricultores locales.</p>
+                    
+                    <h3>Nuestra Misión</h3>
+                    <p>Proporcionar productos frescos, orgánicos y de alta calidad a precios justos, promoviendo una alimentación saludable y el desarrollo agrícola sostenible.</p>
+                    
+                    <h3>Nuestros Valores</h3>
+                    <ul class="values-list">
+                        <li><strong>Calidad:</strong> Solo productos frescos y verificados</li>
+                        <li><strong>Honestidad:</strong> Precios justos y transparencia</li>
+                        <li><strong>Sostenibilidad:</strong> Cuidado del medio ambiente</li>
+                        <li><strong>Comunidad:</strong> Apoyo a agricultores locales</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-seedling"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section id="contacto" class="section">
+        <div class="container-content">
+            <h2>Contacto</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form onsubmit="handleContactForm(event)">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Calle Principal 123, Ciudad, País</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@agroshop.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horarios</h4>
+                            <p>Lun-Vie: 9am - 6pm<br>Sáb-Dom: 10am - 4pm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DEL CARRITO -->
+    <div class="shopping-cart-modal">
+        <div class="cart-content">
+            <span id="close-cart" role="button" aria-label="Cerrar carrito">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <div id="cart-items">
+            </div>
+            <div class="cart-summary">
+                <strong>Total:</strong> <span id="cart-total">$0.00</span>
+            </div>
+            <button id="clear-cart-btn">Vaciar Carrito</button>
+            <button class="btn-primary" style="width: 100%; margin-top: 10px;">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Agroshop - Todos los derechos reservados | Productos Agrícolas Frescos</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

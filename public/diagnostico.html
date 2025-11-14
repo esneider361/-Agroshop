@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico Agroshop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .box {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #10b981;
+        }
+        .error {
+            border-left-color: #ef4444;
+            background: #fef2f2;
+        }
+        .success {
+            border-left-color: #10b981;
+            background: #f0fdf4;
+        }
+        h1 {
+            color: #10b981;
+        }
+        code {
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Diagnóstico de Agroshop</h1>
+    
+    <div class="box success">
+        <strong>✅ Página cargada correctamente</strong>
+        <p>Este diagnóstico verifica que el navegador puede ejecutar la aplicación.</p>
+    </div>
+    
+    <div class="box">
+        <strong>📋 Verificaciones:</strong>
+        <ul>
+            <li id="check1">⏳ Comprobando JavaScript...</li>
+            <li id="check2">⏳ Comprobando Web Components...</li>
+            <li id="check3">⏳ Comprobando CSS...</li>
+            <li id="check4">⏳ Comprobando DOM...</li>
+        </ul>
+    </div>
+    
+    <div class="box">
+        <strong>💡 Si ves esto pero agroshop no funciona:</strong>
+        <ol>
+            <li>Abre DevTools (F12) y mira la pestaña "Console"</li>
+            <li>Busca mensajes de error en rojo</li>
+            <li>Si hay errores, cópialos y comparte</li>
+            <li>Si no hay errores, recarga (F5) la página de Agroshop</li>
+        </ol>
+    </div>
+    
+    <script>
+        // Test 1: JavaScript
+        setTimeout(() => {
+            document.getElementById('check1').textContent = '✅ JavaScript funciona';
+        }, 100);
+        
+        // Test 2: Web Components
+        setTimeout(() => {
+            if (typeof HTMLElement !== 'undefined' && 'customElements' in window) {
+                document.getElementById('check2').textContent = '✅ Web Components soportados';
+            } else {
+                document.getElementById('check2').textContent = '❌ Web Components NO soportados';
+                document.getElementById('check2').parentElement.classList.add('error');
+            }
+        }, 200);
+        
+        // Test 3: CSS
+        setTimeout(() => {
+            const div = document.createElement('div');
+            div.style.display = 'grid';
+            if (div.style.display === 'grid') {
+                document.getElementById('check3').textContent = '✅ CSS3 funciona';
+            } else {
+                document.getElementById('check3').textContent = '❌ CSS3 NO soportado';
+                document.getElementById('check3').parentElement.classList.add('error');
+            }
+        }, 300);
+        
+        // Test 4: DOM
+        setTimeout(() => {
+            if (document.getElementById('check4')) {
+                document.getElementById('check4').textContent = '✅ DOM accesible';
+            } else {
+                document.getElementById('check4').textContent = '❌ DOM NO accesible';
+                document.getElementById('check4').parentElement.classList.add('error');
+            }
+        }, 400);
+        
+        // Test imágenes
+        setTimeout(() => {
+            const box = document.createElement('div');
+            box.className = 'box success';
+            box.innerHTML = '<strong>🖼️ Imágenes Externas:</strong><p>Las imágenes se cargan desde Unsplash. Si ves espacios en blanco en los productos, podría ser porque:<ul><li>Sin conexión a internet</li><li>Unsplash está bloqueado</li><li>Imagen tardando en cargar</li></ul></p>';
+            document.body.appendChild(box);
+        }, 500);
+    </script>
+</body>
+</html>

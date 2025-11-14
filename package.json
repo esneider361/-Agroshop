@@ -1,0 +1,22 @@
+{
+  "name": "agroshop",
+  "version": "1.0.0",
+  "description": "Tienda de productos agrícolas frescos",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "agroshop",
+    "agricola",
+    "tienda",
+    "ecommerce"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
