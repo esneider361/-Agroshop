@@ -13,8 +13,12 @@
   "type": "commonjs",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "node server/server.js",
+    "dev": "node server/server.js",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "test": "echo 'Tests coming soon!'",
+    "build": "echo 'Build configuration coming soon!'"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.4",
