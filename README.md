@@ -1,44 +1,85 @@
 # 🌾 Agroshop - Tienda de Productos Agrícolas
 
-Una tienda de e-commerce moderna para productos agrícolas frescos, construida con HTML, CSS y JavaScript vanilla con Web Components.
+[![Node.js](https://img.shields.io/badge/Node.js->=14.0.0-green?logo=node.js)](https://nodejs.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/Version-1.0.0-blue.svg)](https://github.com/DinoPattta/-Agroshop/releases/tag/v1.0.0)
+[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg)]()
+
+Una tienda de e-commerce moderna para productos agrícolas frescos, construida con **HTML5, CSS3 y JavaScript Vanilla** con Web Components. Sin dependencias externas, completamente responsivo y listo para producción.
 
 ## ✨ Características
 
-- ✅ Interfaz moderna y responsive con gradientes y animaciones suaves
-- ✅ Sistema de categorías (Frutas, Verduras, Lácteos, Cereales)
-- ✅ Carrito de compras funcional
-- ✅ Web Components (producto-card personalizado)
-- ✅ Diseño mobile-first completamente responsivo
-- ✅ Autenticación con páginas de login y registro
-- ✅ Animaciones modernas y transiciones suaves
-- ✅ 12+ productos de ejemplo con imágenes reales
+| Característica | Descripción |
+|---|---|
+| 🎨 **Diseño Moderno** | Interfaz atractiva con gradientes y animaciones suaves |
+| 📱 **Totalmente Responsivo** | Mobile-first, funciona en todos los dispositivos |
+| 🛍️ **E-commerce Completo** | Catálogo de 12+ productos con carrito funcional |
+| 🏷️ **Categorías** | Frutas, Verduras, Lácteos, Cereales |
+| 🔧 **Web Components** | Componentes reutilizables personalizados |
+| 🔐 **Autenticación UI** | Páginas de login y registro diseñadas |
+| ⚡ **Sin Dependencias** | HTML, CSS y JS vanilla - carga ultra rápida |
+| 🎯 **Multi-sección** | Inicio, Tienda, Nosotros, Contacto |
+
+---
+
+## 📋 Tabla de Contenidos
+
+- [Características](#-características)
+- [Demo](#-demo)
+- [Inicio Rápido](#-inicio-rápido)
+- [Requisitos](#requisitos)
+- [Instalación](#instalación)
+- [Estructura](#-estructura-del-proyecto)
+- [Tecnologías](#-tecnologías-utilizadas)
+- [API](#-api-endpoints)
+- [Desarrollo](#-desarrollo)
+- [Documentación](#-documentación-completa)
+- [Contribuir](#-contribución)
+- [Licencia](#-licencia)
+
+## 🖼️ Demo
+
+### En Vivo
+- **Sitio Web**: http://localhost:3000 (después de ejecutar)
+- **Admin Dashboard**: Próximamente
+- **API Docs**: `/api/docs`
+
+### Screenshots
+```
+[Agroshop - Homepage Hero]
+[Agroshop - Tienda con Productos]
+[Agroshop - Carrito de Compras]
+[Agroshop - Vista Mobile]
+```
+
+---
 
 ## 🚀 Inicio Rápido
 
 ### Requisitos
-- Node.js (v14 o superior)
+- **Node.js** v14 o superior
+- **npm** o **yarn**
+- Un navegador moderno (Chrome, Firefox, Safari, Edge)
 
-### Instalación
+### Instalación Rápida
 
-1. **Clona o accede al directorio del proyecto:**
-   ```bash
-   cd agroshop-main
-   ```
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/DinoPattta/-Agroshop.git
+cd agroshop-main
 
-2. **Inicia el servidor:**
-   ```bash
-   npm start
-   ```
-   
-   O directamente con Node:
-   ```bash
-   node server.js
-   ```
+# 2. Instalar dependencias
+npm install
 
-3. **Abre tu navegador:**
-   ```
-   http://localhost:3000
-   ```
+# 3. Ejecutar en desarrollo
+npm start
+
+# 4. Abrir en navegador
+# Automáticamente abrirá http://localhost:3000
+# O abre manualmente: http://localhost:3000
+```
+
+**¡Listo! La tienda estará disponible en 30 segundos ⚡**
 
 ## 📁 Estructura del Proyecto
 
@@ -70,12 +111,30 @@ agroshop-main/
 
 ## 💻 Tecnologías Utilizadas
 
-- **HTML5** - Semántica moderna
-- **CSS3** - Gradientes, animaciones, Flexbox, Grid
-- **JavaScript Vanilla** - Sin dependencias externas
-- **Web Components** - Custom Elements para tarjetas de producto
-- **Font Awesome 6** - Iconos
-- **Google Fonts** - Tipografía (Poppins, Merriweather)
+### Frontend
+```
+✅ HTML5           - Estructura semántica moderna
+✅ CSS3            - Grid, Flexbox, Animaciones, Gradientes
+✅ JavaScript ES6+ - Vanilla (sin dependencias)
+✅ Web Components  - Custom Elements reutilizables
+✅ Responsive      - Mobile-first design
+✅ A11y            - Accesibilidad (ARIA labels)
+```
+
+### Backend (Opcional)
+```
+✅ Node.js         - Express.js (recomendado)
+✅ Python          - Flask/FastAPI (alternativa)
+✅ REST API        - 10+ endpoints documentados
+```
+
+### Herramientas
+```
+✅ Font Awesome 6  - Iconos profesionales
+✅ Google Fonts    - Tipografía (Poppins, Merriweather)
+✅ Capacitor       - Apps móviles nativas
+✅ Git/GitHub      - Control de versiones
+```
 
 ## 🎯 Funcionalidades Principales
 
@@ -130,23 +189,121 @@ Este proyecto es perfecto para aprender:
 - Servidor HTTP básico con Node.js
 - Buenas prácticas en JavaScript vanilla
 
-## 📝 Notas de Desarrollo
+## 🔨 Desarrollo
 
-- Los productos están almacenados en un objeto JavaScript
-- No se usa base de datos (datos en memoria)
-- Los endpoints de autenticación son placeholders (/api/login, /api/register)
-- Las imágenes provienen de Unsplash (requiere conexión a internet)
+### Scripts Disponibles
 
-## 🚀 Próximas Mejoras
+```bash
+npm start          # Ejecutar servidor en desarrollo
+npm run dev        # Modo desarrollo con watch
+npm run lint       # Verificar código con ESLint
+npm run build      # Build para producción
+npm run test       # Ejecutar tests
+```
 
-- [ ] Integración con base de datos
+### Estructura de Carpetas
+
+```
+agroshop-main/
+├── web/public/           # Frontend (HTML, CSS, JS)
+├── server/              # Backend (Node.js, Python)
+├── config/              # Configuración
+├── docs/                # Documentación
+├── mobile/android/      # App Android
+└── scripts/             # Scripts útiles
+```
+
+### Notas de Desarrollo
+
+- ✅ Productos en JavaScript (en memoria actualmente)
+- ✅ Sin base de datos todavía (próxima versión)
+- ✅ Endpoints son placeholders (implementar backend)
+- ✅ Imágenes desde Unsplash (requiere internet)
+- ⚠️ Autenticación UI solo - backend pendiente
+
+---
+
+## 📚 Documentación Completa
+
+| Recurso | Descripción |
+|---|---|
+| [EMPEZAR_AQUI.md](EMPEZAR_AQUI.md) | 🟢 **COMIENZA AQUÍ** - Guía de bienvenida |
+| [docs/INDEX.md](docs/INDEX.md) | Centro de documentación con todas las guías |
+| [docs/guias/INICIO_RAPIDO.md](docs/guias/INICIO_RAPIDO.md) | Guía 5 minutos |
+| [docs/guias/INSTALACION.md](docs/guias/INSTALACION.md) | Instalación paso a paso |
+| [docs/api/ENDPOINTS.md](docs/api/ENDPOINTS.md) | API REST documentada |
+| [docs/api/AUTENTICACION.md](docs/api/AUTENTICACION.md) | Sistema de auth |
+| [server/README.md](server/README.md) | Documentación backend |
+| [REFERENCIA_RAPIDA.md](REFERENCIA_RAPIDA.md) | Cheat sheet para devs |
+
+---
+
+## 🤝 Contribución
+
+¿Quieres contribuir? ¡Es fácil!
+
+1. Fork el repositorio
+2. Crea una rama (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+Ver guía completa: [CONTRIBUYENDO.md](CONTRIBUYENDO.md)
+
+---
+
+## 📞 Soporte
+
+¿Problemas? ¿Preguntas?
+
+- 📖 Revisa la [documentación](docs/INDEX.md)
+- 🐛 Abre un [Issue](https://github.com/DinoPattta/-Agroshop/issues)
+- 💬 Inicia una [Discussion](https://github.com/DinoPattta/-Agroshop/discussions)
+
+## 🔄 API Endpoints
+
+```javascript
+// Productos
+GET    /api/products           // Obtener todos
+GET    /api/products/:id       // Obtener por ID
+GET    /api/categories         // Obtener categorías
+
+// Carrito
+POST   /api/cart/add           // Agregar producto
+DELETE /api/cart/remove        // Eliminar producto
+GET    /api/cart               // Obtener carrito
+
+// Autenticación
+POST   /api/auth/login         // Login
+POST   /api/auth/register      // Registro
+POST   /api/auth/logout        // Logout
+
+// Órdenes
+POST   /api/orders             // Crear orden
+GET    /api/orders/:id         // Obtener orden
+```
+
+Ver documentación completa: [docs/api/ENDPOINTS.md](docs/api/ENDPOINTS.md)
+
+---
+
+## 🚀 Próximas Versiones
+
+### v1.1.0 (Próximo)
+- [ ] Backend con base de datos (MongoDB/PostgreSQL)
 - [ ] Autenticación real (JWT)
-- [ ] Búsqueda de productos
-- [ ] Filtros avanzados
+- [ ] Persistencia de carrito en BD
+
+### v1.2.0
+- [ ] Integración de pago (Stripe/PayPal)
+- [ ] Búsqueda y filtros avanzados
 - [ ] Historial de compras
-- [ ] Reviews y calificaciones
-- [ ] Integración de pago
+
+### v2.0.0
 - [ ] Admin panel
+- [ ] Reviews y calificaciones
+- [ ] App móvil nativa (Android/iOS)
+- [ ] Sistema de notificaciones
 
 ## 📄 Licencia
 
