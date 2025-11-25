@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict IzrmR7pA0qcUNCiBoSfexGx5KXdhGWRwLAQ9TI1rLqbetJ8jbOEiDLpVopmbJLG
+\restrict i2ZEyfDdYcm8j2TvOdquPHxb3ha4SS08Zd6v2FemYLQYFff9nRKdTzGONJpiuEa
 
 -- Dumped from database version 17.6 (Ubuntu 17.6-0ubuntu0.25.04.1)
 -- Dumped by pg_dump version 17.6 (Ubuntu 17.6-0ubuntu0.25.04.1)
@@ -133,17 +133,17 @@ COPY public.categorias (id, nombre, descripcion, created_at) FROM stdin;
 
 COPY public.productos (id, nombre, descripcion, precio, categoria_id, imagen_url, stock, activo, created_at, updated_at) FROM stdin;
 1	Manzanas Rojas	Manzanas rojas frescas y crujientes	2.50	1	https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400	100	t	2025-11-21 10:03:41.525888	2025-11-21 10:03:41.525888
-2	Plátanos Frescos	Plátanos maduros y dulces	1.80	1	https://images.unsplash.com/photo-1571771894824-c13b341134a6?w=400	80	t	2025-11-21 10:03:41.525888	2025-11-21 10:03:41.525888
-3	Naranjas	Naranjas jugosas y ricas en vitamina C	2.00	1	https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=400	120	t	2025-11-21 10:03:41.525888	2025-11-21 10:03:41.525888
-4	Zanahorias Orgánicas	Zanahorias frescas cultivadas orgánicamente	1.20	2	https://images.unsplash.com/photo-1590868309235-e62758673633?w=400	75	t	2025-11-21 10:04:17.996165	2025-11-21 10:04:17.996165
 5	Tomates Frescos	Tomates rojos y jugosos	3.00	2	https://images.unsplash.com/photo-1582284540020-8acbe03f4924?w=400	90	t	2025-11-21 10:04:17.996165	2025-11-21 10:04:17.996165
-6	Lechuga Verde	Lechuga fresca y crujiente	1.50	2	https://images.unsplash.com/photo-1511621776486-a01980e01a18?w=400	60	t	2025-11-21 10:04:17.996165	2025-11-21 10:04:17.996165
-7	Leche Fresca Pura	Leche fresca pasteurizada	1.50	3	https://images.unsplash.com/photo-1620189507195-68309c04c4d2?w=400	50	t	2025-11-21 10:04:29.5618	2025-11-21 10:04:29.5618
-8	Queso Artesanal	Queso artesanal de alta calidad	12.00	3	https://images.unsplash.com/photo-1628022299361-934f559437a3?w=400	30	t	2025-11-21 10:04:29.5618	2025-11-21 10:04:29.5618
-9	Yogurt Natural	Yogurt natural sin azúcar añadida	3.50	3	https://images.unsplash.com/photo-1608270861620-7891c1b51748?w=400	40	t	2025-11-21 10:04:29.5618	2025-11-21 10:04:29.5618
-10	Avena en Hojuelas	Avena integral en hojuelas	4.00	4	https://images.unsplash.com/photo-1500219955672-7a0c96848225?w=400	85	t	2025-11-21 10:04:39.477019	2025-11-21 10:04:39.477019
-11	Maíz Fresco	Maíz dulce y fresco	1.00	4	https://images.unsplash.com/photo-1599447462853-f72a445778a8?w=400	110	t	2025-11-21 10:04:39.477019	2025-11-21 10:04:39.477019
-12	Arroz Integral	Arroz integral de grano largo	2.50	4	https://images.unsplash.com/photo-1586985289688-cacf604ba6d3?w=400	95	t	2025-11-21 10:04:39.477019	2025-11-21 10:04:39.477019
+2	Plátanos Frescos	Plátanos maduros y dulces	1.80	1	https://images.unsplash.com/photo-1573828235229-fb27fdc8da91?q=80&w=899&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D	80	t	2025-11-21 10:03:41.525888	2025-11-21 10:03:41.525888
+6	Lechuga Verde	Lechuga fresca y crujiente	1.50	2	https://images.unsplash.com/photo-1713082063917-59863809f007?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D	60	t	2025-11-21 10:04:17.996165	2025-11-21 10:04:17.996165
+4	Zanahorias Orgánicas	Zanahorias frescas cultivadas orgánicamente	1.20	2	https://images.unsplash.com/photo-1590868309235-ea34bed7bd7f?q=80&w=927&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D	75	t	2025-11-21 10:04:17.996165	2025-11-21 10:04:17.996165
+3	Naranjas	Naranjas jugosas y ricas en vitamina C	2.00	1	https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D	120	t	2025-11-21 10:03:41.525888	2025-11-21 10:03:41.525888
+7	Leche Fresca Pura	Leche fresca pasteurizada	1.50	3	https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D	50	t	2025-11-21 10:04:29.5618	2025-11-21 10:04:29.5618
+8	Queso Artesanal	Queso artesanal de alta calidad	12.00	3	https://images.unsplash.com/photo-1683314573422-649a3c6ad784?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D	30	t	2025-11-21 10:04:29.5618	2025-11-21 10:04:29.5618
+9	Yogurt Natural	Yogurt natural sin azúcar añadida	3.50	3	https://images.unsplash.com/photo-1564149503905-7fef56abc1f2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D	40	t	2025-11-21 10:04:29.5618	2025-11-21 10:04:29.5618
+12	Arroz Integral	Arroz integral de grano largo	2.50	4	https://images.unsplash.com/photo-1627482265910-5c0ff6bee088?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D	95	t	2025-11-21 10:04:39.477019	2025-11-21 10:04:39.477019
+10	Avena en Hojuelas	Avena integral en hojuelas	4.00	4	https://images.unsplash.com/photo-1614373532018-92a75430a0da?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D	85	t	2025-11-21 10:04:39.477019	2025-11-21 10:04:39.477019
+11	Maíz Fresco	Maíz dulce y fresco	1.00	4	https://images.unsplash.com/photo-1634467524884-897d0af5e104?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D	110	t	2025-11-21 10:04:39.477019	2025-11-21 10:04:39.477019
 \.
 
 
@@ -250,5 +250,5 @@ ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA public GRANT ALL ON TABLES 
 -- PostgreSQL database dump complete
 --
 
-\unrestrict IzrmR7pA0qcUNCiBoSfexGx5KXdhGWRwLAQ9TI1rLqbetJ8jbOEiDLpVopmbJLG
+\unrestrict i2ZEyfDdYcm8j2TvOdquPHxb3ha4SS08Zd6v2FemYLQYFff9nRKdTzGONJpiuEa
 
