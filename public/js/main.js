@@ -1,4 +1,4 @@
-// main.js - VERSIÓN CORREGIDA
+// main.js 
 class ProductCard extends HTMLElement {
     connectedCallback() {
         const id = this.getAttribute('data-id');

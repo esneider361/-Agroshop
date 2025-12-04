@@ -1,4 +1,4 @@
-package com.example.app;
+package com.agroshop.app;
 
 import com.getcapacitor.BridgeActivity;
 
