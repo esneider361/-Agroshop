@@ -1,4 +1,4 @@
-# 🍽 RESTAURANTE API
+# Agroshop APP
 
 Backend desarrollado por **Esneider Monsalve**  
 Desarrollador Full Stack Junior  
