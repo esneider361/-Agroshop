@@ -1,318 +1,267 @@
-# 🌾 Agroshop - Tienda de Productos Agrícolas
+# 🍽 RESTAURANTE API
 
-[![Node.js](https://img.shields.io/badge/Node.js->=14.0.0-green?logo=node.js)](https://nodejs.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/Version-1.0.0-blue.svg)](https://github.com/DinoPattta/-Agroshop/releases/tag/v1.0.0)
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg)]()
-
-Una tienda de e-commerce moderna para productos agrícolas frescos, construida con **HTML5, CSS3 y JavaScript Vanilla** con Web Components. Sin dependencias externas, completamente responsivo y listo para producción.
-
-## ✨ Características
-
-| Característica | Descripción |
-|---|---|
-| 🎨 **Diseño Moderno** | Interfaz atractiva con gradientes y animaciones suaves |
-| 📱 **Totalmente Responsivo** | Mobile-first, funciona en todos los dispositivos |
-| 🛍️ **E-commerce Completo** | Catálogo de 12+ productos con carrito funcional |
-| 🏷️ **Categorías** | Frutas, Verduras, Lácteos, Cereales |
-| 🔧 **Web Components** | Componentes reutilizables personalizados |
-| 🔐 **Autenticación UI** | Páginas de login y registro diseñadas |
-| ⚡ **Sin Dependencias** | HTML, CSS y JS vanilla - carga ultra rápida |
-| 🎯 **Multi-sección** | Inicio, Tienda, Nosotros, Contacto |
+Backend desarrollado por **Esneider Monsalve**  
+Desarrollador Full Stack Junior  
 
 ---
 
-## 📋 Tabla de Contenidos
+## 👨‍💻 Sobre el Proyecto
 
-- [Características](#-características)
-- [Demo](#-demo)
-- [Inicio Rápido](#-inicio-rápido)
-- [Requisitos](#requisitos)
-- [Instalación](#instalación)
-- [Estructura](#-estructura-del-proyecto)
-- [Tecnologías](#-tecnologías-utilizadas)
-- [API](#-api-endpoints)
-- [Desarrollo](#-desarrollo)
-- [Documentación](#-documentación-completa)
-- [Contribuir](#-contribución)
-- [Licencia](#-licencia)
+RESTAURANTE API es una aplicación backend desarrollada con Node.js y Express que permite gestionar un sistema de restaurante mediante una API REST segura y estructurada.
 
-## 🖼️ Demo
-
-### En Vivo
-- **Sitio Web**: http://localhost:3000 (después de ejecutar)
-- **Admin Dashboard**: Próximamente
-- **API Docs**: `/api/docs`
-
-### Screenshots
-```
-[Agroshop - Homepage Hero]
-[Agroshop - Tienda con Productos]
-[Agroshop - Carrito de Compras]
-[Agroshop - Vista Mobile]
-```
+Este proyecto demuestra mis habilidades como desarrollador backend, incluyendo autenticación segura con JWT, conexión a base de datos PostgreSQL y arquitectura organizada bajo el patrón MVC.
 
 ---
 
-## 🚀 Inicio Rápido
+## 🚀 Tecnologías Utilizadas
 
-### Requisitos
-- **Node.js** v14 o superior
-- **npm** o **yarn**
-- Un navegador moderno (Chrome, Firefox, Safari, Edge)
+- Node.js
+- Express.js
+- PostgreSQL
+- JWT (JSON Web Token)
+- bcrypt
+- dotenv
+- Cors
+- Arquitectura MVC
 
-### Instalación Rápida
+---
+
+## 🔐 Autenticación y Seguridad
+
+El sistema implementa autenticación basada en JWT:
+
+- Registro e inicio de sesión de usuarios.
+- Encriptación de contraseñas con bcrypt.
+- Generación de token JWT al iniciar sesión.
+- Persistencia de sesión mediante token.
+- Middleware de autenticación para proteger rutas privadas.
+- Validación del token sin necesidad de consultar nuevamente la base de datos.
+
+Esto permite mantener sesiones activas de forma segura y eficiente.
+
+---
+
+## 🗄 Base de Datos
+
+Se utiliza PostgreSQL como motor de base de datos.
+
+Características:
+
+- Conexión configurada mediante archivo `.env`.
+- Estructura relacional organizada.
+- Preparado para escalabilidad.
+- Separación de modelos y lógica de negocio.
+
+---
+
+## 📂 Estructura del Proyecto
+
+```
+├── controllers/
+├── routes/
+├── middlewares/
+├── models/
+├── database/
+├── .env
+├── server.js
+└── package.json
+```
+
+El proyecto está organizado bajo el patrón MVC para mantener separación de responsabilidades y facilitar el mantenimiento.
+
+---
+
+## ⚙ Instalación y Configuración
+
+### 1️⃣ Clonar el repositorio
 
 ```bash
-# 1. Clonar el repositorio
-git clone https://github.com/DinoPattta/-Agroshop.git
-cd agroshop-main
+git clone https://github.com/esneider361/NOMBRE_DEL_REPO.git
+cd NOMBRE_DEL_REPO
+```
 
-# 2. Instalar dependencias
+### 2️⃣ Instalar dependencias
+
+```bash
 npm install
-
-# 3. Ejecutar en desarrollo
-npm start
-
-# 4. Abrir en navegador
-# Automáticamente abrirá http://localhost:3000
-# O abre manualmente: http://localhost:3000
 ```
 
-**¡Listo! La tienda estará disponible en 30 segundos ⚡**
+### 3️⃣ Configurar variables de entorno
 
-## 📁 Estructura del Proyecto
+Crear un archivo `.env` en la raíz del proyecto:
 
 ```
-agroshop-main/
-├── public/
-│   ├── index.html           # Página principal
-│   ├── js/
-│   │   └── main.js          # Lógica principal y componentes
-│   ├── css/
-│   │   ├── style.css        # Estilos principales
-│   │   ├── login.css        # Estilos de login
-│   │   └── register.css     # Estilos de registro
-│   └── auth/
-│       ├── login.html       # Página de inicio de sesión
-│       └── register.html    # Página de registro
-├── server.js                # Servidor Node.js
-├── package.json             # Configuración del proyecto
-└── README.md               # Este archivo
+PORT=3000
+
+DB_HOST=localhost
+DB_USER=tu_usuario
+DB_PASSWORD=tu_password
+DB_NAME=nombre_base_datos
+DB_PORT=5432
+
+JWT_SECRET=tu_clave_secreta
+JWT_EXPIRES_IN=24h
 ```
 
-## 🎨 Paleta de Colores
-
-- **Primario**: Verde Esmeralda (#10b981)
-- **Primario Oscuro**: Verde Oscuro (#059669)
-- **Secundario**: Ámbar (#f59e0b)
-- **Acento**: Púrpura (#8b5cf6)
-- **Fondo**: Gris muy claro (#f9fafb)
-
-## 💻 Tecnologías Utilizadas
-
-### Frontend
-```
-✅ HTML5           - Estructura semántica moderna
-✅ CSS3            - Grid, Flexbox, Animaciones, Gradientes
-✅ JavaScript ES6+ - Vanilla (sin dependencias)
-✅ Web Components  - Custom Elements reutilizables
-✅ Responsive      - Mobile-first design
-✅ A11y            - Accesibilidad (ARIA labels)
-```
-
-### Backend (Opcional)
-```
-✅ Node.js         - Express.js (recomendado)
-✅ Python          - Flask/FastAPI (alternativa)
-✅ REST API        - 10+ endpoints documentados
-```
-
-### Herramientas
-```
-✅ Font Awesome 6  - Iconos profesionales
-✅ Google Fonts    - Tipografía (Poppins, Merriweather)
-✅ Capacitor       - Apps móviles nativas
-✅ Git/GitHub      - Control de versiones
-```
-
-## 🎯 Funcionalidades Principales
-
-### 1. Catálogo de Productos
-- Vista de grid responsiva
-- Filtrado por categorías
-- Imágenes de productos con carga desde Unsplash
-
-### 2. Carrito de Compras
-- Añadir/eliminar productos
-- Cálculo automático de totales
-- Modal con animación suave
-- Confirmación visual al añadir items
-
-### 3. Autenticación (UI)
-- Página de login con validación de formulario
-- Página de registro
-- Diseño atractivo con gradiente de fondo
-- Validación HTML5 nativa
-
-### 4. Responsive Design
-- Adaptable a todos los tamaños de pantalla
-- Menú optimizado para móviles
-- Imágenes optimizadas
-- Navegación táctil amigable
-
-## 📱 Resoluciones Soportadas
-
-- **Desktop** (> 768px): Navegación completa, sidebar de categorías
-- **Tablet** (768px - 480px): Menú adaptado, categorías en horizontal
-- **Móvil** (< 480px): Interfaz optimizada, navegación simplificada
-
-## ⌨️ Atajos de Teclado
-
-- **ESC** - Cerrar modal del carrito
-
-## 🔧 Uso del Servidor
-
-El servidor incluye:
-- Servicio de archivos estáticos
-- CORS habilitado
-- Soporte para rutas SPA
-- Manejo de errores 404
-- Seguridad contra directory traversal
-
-## 🎓 Aprendizaje
-
-Este proyecto es perfecto para aprender:
-- Web Components y Custom Elements
-- Manipulación del DOM sin frameworks
-- CSS moderno (Grid, Flexbox, Gradientes)
-- Servidor HTTP básico con Node.js
-- Buenas prácticas en JavaScript vanilla
-
-## 🔨 Desarrollo
-
-### Scripts Disponibles
+### 4️⃣ Ejecutar el servidor
 
 ```bash
-npm start          # Ejecutar servidor en desarrollo
-npm run dev        # Modo desarrollo con watch
-npm run lint       # Verificar código con ESLint
-npm run build      # Build para producción
-npm run test       # Ejecutar tests
+npm start
 ```
 
-### Estructura de Carpetas
+Servidor disponible en:
 
 ```
-agroshop-main/
-├── web/public/           # Frontend (HTML, CSS, JS)
-├── server/              # Backend (Node.js, Python)
-├── config/              # Configuración
-├── docs/                # Documentación
-├── mobile/android/      # App Android
-└── scripts/             # Scripts útiles
+http://localhost:3000
 ```
 
-### Notas de Desarrollo
-
-- ✅ Productos en JavaScript (en memoria actualmente)
-- ✅ Sin base de datos todavía (próxima versión)
-- ✅ Endpoints son placeholders (implementar backend)
-- ✅ Imágenes desde Unsplash (requiere internet)
-- ⚠️ Autenticación UI solo - backend pendiente
-
 ---
 
-## 📚 Documentación Completa
+# 📡 Documentación de Endpoints
 
-| Recurso | Descripción |
-|---|---|
-| [EMPEZAR_AQUI.md](EMPEZAR_AQUI.md) | 🟢 **COMIENZA AQUÍ** - Guía de bienvenida |
-| [docs/INDEX.md](docs/INDEX.md) | Centro de documentación con todas las guías |
-| [docs/guias/INICIO_RAPIDO.md](docs/guias/INICIO_RAPIDO.md) | Guía 5 minutos |
-| [docs/guias/INSTALACION.md](docs/guias/INSTALACION.md) | Instalación paso a paso |
-| [docs/api/ENDPOINTS.md](docs/api/ENDPOINTS.md) | API REST documentada |
-| [docs/api/AUTENTICACION.md](docs/api/AUTENTICACION.md) | Sistema de auth |
-| [server/README.md](server/README.md) | Documentación backend |
-| [REFERENCIA_RAPIDA.md](REFERENCIA_RAPIDA.md) | Cheat sheet para devs |
+## 🔐 Autenticación
 
----
+### 🟢 Registrar usuario
+**POST** `/api/auth/register`
 
-## 🤝 Contribución
+Crea un nuevo usuario en el sistema.
 
-¿Quieres contribuir? ¡Es fácil!
-
-1. Fork el repositorio
-2. Crea una rama (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-Ver guía completa: [CONTRIBUYENDO.md](CONTRIBUYENDO.md)
-
----
-
-## 📞 Soporte
-
-¿Problemas? ¿Preguntas?
-
-- 📖 Revisa la [documentación](docs/INDEX.md)
-- 🐛 Abre un [Issue](https://github.com/DinoPattta/-Agroshop/issues)
-- 💬 Inicia una [Discussion](https://github.com/DinoPattta/-Agroshop/discussions)
-
-## 🔄 API Endpoints
-
-```javascript
-// Productos
-GET    /api/products           // Obtener todos
-GET    /api/products/:id       // Obtener por ID
-GET    /api/categories         // Obtener categorías
-
-// Carrito
-POST   /api/cart/add           // Agregar producto
-DELETE /api/cart/remove        // Eliminar producto
-GET    /api/cart               // Obtener carrito
-
-// Autenticación
-POST   /api/auth/login         // Login
-POST   /api/auth/register      // Registro
-POST   /api/auth/logout        // Logout
-
-// Órdenes
-POST   /api/orders             // Crear orden
-GET    /api/orders/:id         // Obtener orden
+**Body:**
+```json
+{
+  "name": "Juan Perez",
+  "email": "juan@email.com",
+  "password": "123456"
+}
 ```
 
-Ver documentación completa: [docs/api/ENDPOINTS.md](docs/api/ENDPOINTS.md)
+---
+
+### 🟢 Iniciar sesión
+**POST** `/api/auth/login`
+
+Genera un token JWT para autenticación.
+
+**Body:**
+```json
+{
+  "email": "juan@email.com",
+  "password": "123456"
+}
+```
+
+**Respuesta:**
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
 
 ---
 
-## 🚀 Próximas Versiones
+## 👥 Usuarios (🔒 Requiere Token)
 
-### v1.1.0 (Próximo)
-- [ ] Backend con base de datos (MongoDB/PostgreSQL)
-- [ ] Autenticación real (JWT)
-- [ ] Persistencia de carrito en BD
+### 🔵 Obtener todos los usuarios
+**GET** `/api/users`
 
-### v1.2.0
-- [ ] Integración de pago (Stripe/PayPal)
-- [ ] Búsqueda y filtros avanzados
-- [ ] Historial de compras
+### 🔵 Obtener usuario por ID
+**GET** `/api/users/:id`
 
-### v2.0.0
-- [ ] Admin panel
-- [ ] Reviews y calificaciones
-- [ ] App móvil nativa (Android/iOS)
-- [ ] Sistema de notificaciones
+### 🟡 Actualizar usuario
+**PUT** `/api/users/:id`
 
-## 📄 Licencia
-
-MIT
-
-## 👨‍💻 Autor
-
-Proyecto de demostración de e-commerce moderno
+### 🔴 Eliminar usuario
+**DELETE** `/api/users/:id`
 
 ---
 
-**Hecho con ❤️ para Agroshop** 🌾
+## 🍽 Platos (🔒 Requiere Token)
+
+### 🔵 Obtener todos los platos
+**GET** `/api/dishes`
+
+### 🟢 Crear plato
+**POST** `/api/dishes`
+
+### 🟡 Actualizar plato
+**PUT** `/api/dishes/:id`
+
+### 🔴 Eliminar plato
+**DELETE** `/api/dishes/:id`
+
+---
+
+## 🧾 Pedidos (🔒 Requiere Token)
+
+### 🟢 Crear pedido
+**POST** `/api/orders`
+
+### 🔵 Obtener pedidos
+**GET** `/api/orders`
+
+---
+
+## 🔐 Headers para rutas protegidas
+
+Las rutas protegidas requieren el siguiente header:
+
+```
+Authorization: Bearer TU_TOKEN_AQUI
+```
+
+---
+
+## 🧠 Mi Rol en el Proyecto
+
+En este proyecto fui responsable de:
+
+- Desarrollo completo del backend.
+- Implementación del sistema de autenticación con JWT.
+- Configuración y conexión con PostgreSQL.
+- Creación de middleware de seguridad.
+- Organización del proyecto bajo arquitectura MVC.
+- Configuración de variables de entorno.
+- Persistencia de sesión mediante token.
+- Documentación del proyecto.
+
+---
+
+## 🎯 Objetivo Profesional
+
+Este proyecto hace parte de mi portafolio como **Desarrollador Full Stack Junior**, donde demuestro:
+
+- Desarrollo de APIs REST
+- Implementación de autenticación segura
+- Integración con bases de datos relacionales
+- Buenas prácticas de backend
+- Estructuración profesional de proyectos
+
+---
+
+## 🔮 Mejoras Futuras
+
+- Implementar sistema de roles (admin / usuario)
+- Documentación interactiva con Swagger
+- Tests automatizados
+- Dockerización
+- Deploy en Render o Railway
+
+---
+
+## 📌 Estado del Proyecto
+
+🟢 Funcional  
+🔐 Autenticación implementada  
+🗄 Base de datos conectada  
+🚀 Proyecto listo para escalar  
+
+---
+
+## 📫 Contacto
+
+GitHub: https://github.com/esneider361  
+
+---
+
+⭐ Este proyecto forma parte de mi crecimiento profesional como desarrollador backend.
+
