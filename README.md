@@ -7,7 +7,7 @@ Desarrollador Full Stack Junior
 
 ## 👨‍💻 Sobre el Proyecto
 
-RESTAURANTE API es una aplicación backend desarrollada con Node.js y Express que permite gestionar un sistema de restaurante mediante una API REST segura y estructurada.
+Agroshop es una aplicación backend desarrollada con Node.js y Express que permite gestionar un sistema de restaurante mediante una API REST segura y estructurada.
 
 Este proyecto demuestra mis habilidades como desarrollador backend, incluyendo autenticación segura con JWT, conexión a base de datos PostgreSQL y arquitectura organizada bajo el patrón MVC.
 
